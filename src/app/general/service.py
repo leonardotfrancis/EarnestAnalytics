@@ -44,6 +44,10 @@ class MainService:
         
         path_file_name = f"{path}/Step{step_id}_{file_name}"
         print(path_file_name)
+        
+        if not os.path.exists(path):
+            os.makedirs(path)
+            print(f"Created directory: {path}")
                 
         if Utils.file_exists(path, file_name+f".{type}"):
             print("file exists...")
